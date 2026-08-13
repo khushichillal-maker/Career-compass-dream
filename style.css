@@ -5,98 +5,140 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #FFB3E6 0%, #D9B3FF 50%, #B3FFEC 100%);
-  background-attachment: fixed;
+  font-family: 'Inter', sans-serif;
+  background: #0A0A0A;
+  color: #FFFFFF;
   min-height: 100vh;
-  color: #4A3B5C;
+  overflow-x: hidden;
+  position: relative;
 }
 
-.sparkles {
+/* Grid background */
+.grid-bg {
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background-image: radial-gradient(rgba(255,255,255,0.8) 1px, transparent 1px);
+  background-image: 
+    linear-gradient(rgba(139, 92, 246, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(139, 92, 246, 0.1) 1px, transparent 1px);
   background-size: 50px 50px;
-  opacity: 0.4;
-  animation: float 20s infinite linear;
-  z-index: -1;
+  z-index: -2;
 }
 
-@keyframes float {
-  from { transform: translateY(0); }
-  to { transform: translateY(-100px); }
+/* Neon glow orbs */
+.glow-orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: -1;
+}
+.orb1 {
+  width: 400px;
+  height: 400px;
+  background: #FF00E5;
+  top: 10%;
+  left: 10%;
+  opacity: 0.3;
+}
+.orb2 {
+  width: 500px;
+  height: 500px;
+  background: #8B5CF6;
+  bottom: 10%;
+  right: 10%;
+  opacity: 0.2;
 }
 
 header {
   text-align: center;
-  padding: 80px 20px 40px;
+  padding: 100px 20px 50px;
 }
 
 header h1 {
-  font-size: 3rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 3.5rem;
   font-weight: 700;
-  background: linear-gradient(90deg, #FF69B4, #8A2BE2);
+  letter-spacing: 3px;
+  background: linear-gradient(90deg, #FF00E5, #00F5FF, #8B5CF6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 30px rgba(255, 0, 229, 0.5);
 }
 
 header p {
-  font-size: 1.2rem;
-  margin-top: 10px;
-  font-weight: 300;
+  font-size: 1.1rem;
+  color: #B0B0B0;
+  margin-top: 15px;
+  letter-spacing: 1px;
 }
 
-.glass-card {
-  background: rgba(255, 255, 255, 0.55);
+.cyber-card {
+  background: rgba(20, 20, 30, 0.6);
   backdrop-filter: blur(20px);
-  border-radius: 30px;
+  border: 1px solid rgba(255, 0, 229, 0.3);
+  border-radius: 20px;
   padding: 40px;
   margin: 30px auto;
-  max-width: 950px;
-  border: 1.5px solid rgba(255, 255, 255, 0.8);
-  box-shadow: 0 8px 32px rgba(217, 179, 255, 0.25);
+  max-width: 1000px;
+  box-shadow: 0 0 40px rgba(255, 0, 229, 0.2);
 }
 
-.glass-card h2 {
+.cyber-card h2 {
+  font-family: 'Space Grotesk', sans-serif;
   text-align: center;
-  margin-bottom: 10px;
-  font-weight: 600;
+  margin-bottom: 15px;
+  font-size: 2rem;
+  letter-spacing: 2px;
 }
 
 .subtitle {
   text-align: center;
-  color: #6B5B73;
-  margin-bottom: 25px;
+  color: #B0B0B0;
+  margin-bottom: 30px;
 }
 
 .chatbot-frame {
-  border-radius: 20px;
-  background: white;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 245, 255, 0.3);
+  background: #0A0A0A;
 }
 
-.how-it-works .steps {
+.features .steps {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  margin-top: 30px;
+  gap: 25px;
+  margin-top: 40px;
 }
 
 .step {
-  background: rgba(255, 255, 255, 0.7);
-  padding: 25px;
-  border-radius: 20px;
+  background: rgba(255, 0, 229, 0.05);
+  border: 1px solid rgba(255, 0, 229, 0.2);
+  padding: 30px;
+  border-radius: 15px;
   text-align: center;
+  transition: 0.3s;
+}
+.step:hover {
+  border-color: #FF00E5;
+  box-shadow: 0 0 20px rgba(255, 0, 229, 0.4);
+}
+
+.step h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  color: #FF00E5;
+  margin-bottom: 10px;
 }
 
 footer {
   text-align: center;
-  padding: 50px 20px;
-  font-weight: 300;
-  color: #4A3B5C;
+  padding: 60px 20px;
+  color: #666;
+  font-size: 0.9rem;
 }
 
 @media(max-width: 768px){
   header h1 { font-size: 2.2rem; }
-  .glass-card { margin: 20px; padding: 25px; }
+  .cyber-card { margin: 20px; padding: 25px; }
 }
