@@ -1,177 +1,45 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  cursor: none;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
   font-family: 'Inter', sans-serif;
-  background: #2A2F3F; /* Dark night blue from pic */
+  background: #2A2F3F; /* Dark night blue */
+  background-image: radial-gradient(white 1px, transparent 1px);
+  background-size: 40px 40px;
   color: #2E2A2A;
   min-height: 100vh;
-  overflow-x: hidden;
-  position: relative;
-  background-image: radial-gradient(rgba(255,255,255,0.8) 1px, transparent 1px);
-  background-size: 40px 40px; /* Stars */
 }
 
-/* Neon Cursor - changed to blue */
-.neon-cursor {
-  position: fixed;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: #8A9ACF; /* Periwinkle from pic */
-  box-shadow: 0 0 20px #8A9ACF, 0 0 40px #8A9ACF;
-  pointer-events: none;
-  z-index: 9999;
-  transition: transform 0.1s ease-out;
-}
-
-/* Floating glow orbs - soft blue */
-.glow-orb {
-  position: fixed;
-  border-radius: 50%;
-  filter: blur(120px);
-  z-index: -1;
-}
-.orb1 {
-  width: 400px;
-  height: 400px;
-  background: #8A9ACF;
-  top: 10%;
-  left: 10%;
-  opacity: 0.2;
-  animation: float 8s ease-in-out infinite;
-}
-.orb2 {
-  width: 500px;
-  height: 500px;
-  background: #B3D1FF;
-  bottom: 10%;
-  right: 10%;
-  opacity: 0.15;
-  animation: float 10s ease-in-out infinite reverse;
-}
-@keyframes float {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(30px, -30px); }
-}
-
-header {
-  text-align: center;
-  padding: 100px 20px 50px;
-}
-
+header { text-align: center; padding: 100px 20px 50px; }
 header h1 {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 3.5rem;
-  font-weight: 700;
-  letter-spacing: 3px;
-  background: linear-gradient(90deg, #8A9ACF, #F3E8DD, #8A9ACF); /* Blue + Beige */
+  font-size: 3rem;
+  background: linear-gradient(90deg, #8A9ACF, #F3E8DD);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 30px rgba(138, 154, 207, 0.3);
-  min-height: 60px;
-}
-.cursor {
-  color: #8A9ACF;
-  animation: blink 1s infinite;
-}
-@keyframes blink {
-  50% { opacity: 0; }
 }
 
-header p {
-  font-size: 1.1rem;
-  color: #D9D2C9;
-  margin-top: 15px;
-  letter-spacing: 1px;
-}
-
-#ai-status {
-  text-align: center;
-  color: #8A9ACF;
-  font-family: 'Space Grotesk';
-  font-size: 0.9rem;
-  letter-spacing: 2px;
-  margin-bottom: 15px;
-}
-
-/* CARDS - 3D BEIGE like in pic */
 .cyber-card {
-  background: #F3E8DD; /* Beige card */
+  background: #F3E8DD; /* Beige card from pic */
   border-radius: 25px;
   padding: 40px;
   margin: 30px auto;
-  max-width: 1000px;
-  box-shadow: 0 15px 0 #8A9ACF, 0 0 40px rgba(138, 154, 207, 0.2); /* 3D blue shadow */
-  border: 1px solid rgba(138, 154, 207, 0.3);
+  max-width: 900px;
+  box-shadow: 0 15px 0 #8A9ACF; /* Blue 3D shadow */
+  border: 1px solid #8A9ACF;
 }
 
-.cyber-card h2 {
-  font-family: 'Space Grotesk', sans-serif;
-  text-align: center;
-  margin-bottom: 15px;
-  font-size: 2rem;
-  letter-spacing: 2px;
-  color: #2E2A2A; /* Dark brown text */
-}
-
-.subtitle {
-  text-align: center;
-  color: #6B5E55; /* Muted brown */
-  margin-bottom: 30px;
-}
-
-.chatbot-frame {
-  border-radius: 20px;
-  border: 2px solid #8A9ACF;
-  background: #FFFFFF;
-}
-
-.features .steps {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-  margin-top: 40px;
-}
+.cyber-card h2 { color: #2E2A2A; text-align: center; }
+.subtitle { color: #6B5E55; text-align: center; } /* Brown text */
+.chatbot-frame { border-radius: 20px; border: 2px solid #8A9ACF; }
 
 .step {
   background: #F3E8DD;
   border: 2px solid #8A9ACF;
-  padding: 30px;
   border-radius: 20px;
-  text-align: center;
-  transition: 0.3s;
-  box-shadow: 0 8px 0 #8A9ACF; /* 3D effect */
+  padding: 30px;
+  box-shadow: 0 8px 0 #8A9ACF;
 }
-.step:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 0 #8A9ACF, 0 0 20px rgba(138, 154, 207, 0.4);
-}
+.step h3 { color: #8A9ACF; }
+.step p { color: #6B5E55; }
 
-.step h3 {
-  font-family: 'Space Grotesk', sans-serif;
-  color: #8A9ACF; /* Blue accent */
-  margin-bottom: 10px;
-}
-.step p {
-  color: #6B5E55;
-}
-
-footer {
-  text-align: center;
-  padding: 60px 20px;
-  color: #D9D2C9;
-  font-size: 0.9rem;
-}
-
-@media(max-width: 768px){
-    * { cursor: auto; }
-  .neon-cursor { display: none; }
-  header h1 { font-size: 2.2rem; }
-  .cyber-card { margin: 20px; padding: 25px; box-shadow: 0 10px 0 #8A9ACF; }
-  .step { box-shadow: 0 5px 0 #8A9ACF; }
-}
+footer { text-align: center; padding: 60px; color: #D9D2C9; }
